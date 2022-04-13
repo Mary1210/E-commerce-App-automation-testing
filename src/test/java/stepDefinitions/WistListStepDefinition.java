@@ -32,6 +32,11 @@ public class WistListStepDefinition extends TestRunner {
         searchObject.ProductSearch(productName);
     }
 
+    @And("Open product details page for wish list")
+    public void openProductDetails() {
+        detailsObject.openHTCProduct();
+    }
+
     @Then("Add product to wish list")
     public void addProductToWistList()
     {

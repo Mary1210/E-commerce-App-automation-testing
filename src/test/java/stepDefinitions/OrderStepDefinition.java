@@ -1,9 +1,6 @@
 package stepDefinitions;
 
-import Pages.CheckoutPage;
-import Pages.ProductDetailsPage;
-import Pages.SearchPage;
-import Pages.ShoppingCartPage;
+import Pages.*;
 import Runners.TestRunner;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -19,6 +16,7 @@ public class OrderStepDefinition extends TestRunner {
     ProductDetailsPage detailsObject;
     ShoppingCartPage cartPage;
     CheckoutPage checkoutObject;
+    ComparePage compareObject;
 
     @Before
     public void orderStepDefinitionBeforeClass() {
@@ -30,6 +28,11 @@ public class OrderStepDefinition extends TestRunner {
     @Given("Insert product name to order")
     public void insertProductName() {
         searchObject.ProductSearch(ProductName);
+    }
+
+    @And("Open product details page to order")
+    public void openProductDetails() {
+        compareObject.openFirstProduct();
     }
 
     @Then("Product added to Shopping Cart to do an order")

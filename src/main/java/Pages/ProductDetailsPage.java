@@ -31,6 +31,9 @@ public class ProductDetailsPage extends PageBase{
 	
 	@FindBy (css="input[value='Add to cart']")
 	WebElement addToCartBtn;
+
+	@FindBy(linkText = "HTC One Mini Blue")
+	WebElement htcProduct;
 	
 	public void openSendEmail()
 	{
@@ -56,4 +59,8 @@ public class ProductDetailsPage extends PageBase{
 		clickButton(addToCartBtn);
 	}
 
+	public void openHTCProduct()
+	{
+		clickButton(htcProduct);
+	}
 }

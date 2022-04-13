@@ -17,7 +17,17 @@ public class ComparePage extends PageBase
     public WebElement firstProductName; 
     
     @FindBy(linkText="Apple MacBook Pro 13-inch")
-    public WebElement secodProductName ; 
+    public WebElement secondProductName ;
+
+    public void openFirstProduct()
+    {
+        clickButton(firstProductName);
+    }
+
+    public void openSecondProduct()
+    {
+        clickButton(secondProductName);
+    }
    
 
    

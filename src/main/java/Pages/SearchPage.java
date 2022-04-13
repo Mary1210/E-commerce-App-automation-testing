@@ -19,8 +19,6 @@ public class SearchPage extends PageBase {
 	{
 		super (driver);
 		wait = new WebDriverWait(driver , 30);
-		action = new Actions(driver);
-		js = (JavascriptExecutor) driver;
 	}
 	
 	@FindBy(id="small-searchterms")
@@ -46,11 +44,7 @@ public class SearchPage extends PageBase {
 		clickButton(searchBtn);
 	}
 	
-	public void OpenProductDetailsPage() throws InterruptedException {
-		Thread.sleep(5000);
-		js.executeScript("arguments[0].scrollIntoView();", productTitle);
-		//action.moveToElement(productTitle).build().perform();
-		//wait.until(ExpectedConditions.elementToBeSelected(productTitle));
+	public void OpenProductDetailsPage() {
 		clickButton(productTitle);
 	}
 

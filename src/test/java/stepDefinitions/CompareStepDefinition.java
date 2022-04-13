@@ -32,6 +32,12 @@ public class CompareStepDefinition extends TestRunner {
         searchObject.ProductSearch(firstProductName);
     }
 
+    @And("Open product details page for first product")
+    public void openProductDetails() {
+        compareObject.openFirstProduct();
+    }
+
+
     @Then("Add product to compare")
     public void addProductToCompare() {
         detailsObject.AddProductToCompare();
@@ -41,6 +47,13 @@ public class CompareStepDefinition extends TestRunner {
     public void insertSecondProductName()
     {
         searchObject.ProductSearch(secondProductName);
+    }
+
+
+    @And("Open product details page for second product")
+    public void openSecondProduct()
+    {
+        compareObject.openSecondProduct();
     }
 
     @And("Go to compare page")
@@ -53,6 +66,6 @@ public class CompareStepDefinition extends TestRunner {
     public void productsAddedToComparePage()
     {
         Assert.assertTrue(compareObject.firstProductName.getText().equals("Asus N551JK-XO076H Laptop"));
-        Assert.assertTrue(compareObject.secodProductName.getText().equals("Apple MacBook Pro 13-inch"));
+        Assert.assertTrue(compareObject.secondProductName.getText().equals("Apple MacBook Pro 13-inch"));
     }
 }

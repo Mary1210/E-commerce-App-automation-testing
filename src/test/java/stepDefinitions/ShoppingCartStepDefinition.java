@@ -31,6 +31,12 @@ public class ShoppingCartStepDefinition extends TestRunner {
         searchObject.ProductSearch(productName);
     }
 
+    @And("Open product details page to shopping cart")
+    public void openProductDetails()
+    {
+        detailsObject.openHTCProduct();
+    }
+
     @Then("Add product to shopping Cart")
     public void addProductToShoppingCart()
     {

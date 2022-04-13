@@ -37,11 +37,7 @@ public class SearchStepDefinition extends TestRunner {
     @And("Open product details page")
     public void openProductDetailsPage()
     {
-        try {
             searchObject.OpenProductDetailsPage();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     @Then("Product details page opens successfully")
