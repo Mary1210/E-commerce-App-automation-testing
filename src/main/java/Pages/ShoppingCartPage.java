@@ -11,14 +11,6 @@ public class ShoppingCartPage extends PageBase {
 		// TODO Auto-generated constructor stub
 	}
 
-	@FindBy (name="removefromcart")
-	WebElement removecheck;
-
-	@FindBy(name="updatecart")
-	WebElement updateCartBtn;
-
-	@FindBy (id="itemquantity28260")
-	WebElement quantityTxt;
 
 	@FindBy (css="span[class='product-subtotal']")
 	public WebElement totalLbl;
@@ -34,21 +26,7 @@ public class ShoppingCartPage extends PageBase {
 	WebElement agreeCheckbox; 
 	
 	@FindBy(css="input.button-1.checkout-as-guest-button")
-	WebElement guestCheckoutBtn ; 
-
-	
-	public void RemoveProductFromCart()
-	{
-		clickButton(removecheck);
-		clickButton(updateCartBtn);
-	}
-	
-	public void UpdateProductQuantityInCart(String quantity)
-	{
-		clearText(quantityTxt);
-		setTextElementText(quantityTxt, quantity);
-		clickButton(updateCartBtn);
-	}
+	WebElement guestCheckoutBtn ;
 	
 	public void OpenCheckoutPage()
 	{

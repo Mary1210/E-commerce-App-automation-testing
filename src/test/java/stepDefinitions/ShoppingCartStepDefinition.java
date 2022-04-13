@@ -52,6 +52,6 @@ public class ShoppingCartStepDefinition extends TestRunner {
     @Then("Product added to Shopping Cart")
     public void productAddedToShoppingCart()
     {
-        Assert.assertTrue(cartPage.totalLbl.getText().contains("$100.00"));
+        Assert.assertTrue(cartPage.totalLbl.getText().contains("100"));
     }
 }

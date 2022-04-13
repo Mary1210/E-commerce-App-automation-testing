@@ -27,6 +27,6 @@ public class CurrencyStepDefinition extends TestRunner {
     @Then("Currency changes successfully")
     public void currencyChanged()
     {
-        Assert.assertEquals("Euro", homeObject.customerCurrency.getText().contains("Euro"));
+        Assert.assertEquals(true, homeObject.customerCurrency.getText().contains("Euro"));
     }
 }

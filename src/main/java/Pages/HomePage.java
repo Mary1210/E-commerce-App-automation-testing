@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends PageBase{
 
-	Actions action;
 	public HomePage(WebDriver driver) {
 		super(driver);
 		wait = new WebDriverWait(driver, 30);
+		action = new Actions(driver);
 	}
 
 	@FindBy(linkText="Register")
@@ -34,20 +34,23 @@ public class HomePage extends PageBase{
 	@FindBy(name="customerCurrency")
 	public WebElement customerCurrency;
 
-	@FindBy(name="Electronics")
+	@FindBy(xpath="//ul[@class='top-menu notmobile']//a[@href='/electronics']")
 	WebElement electronicsLink;
 
-	@FindBy(linkText = "Cell phones ")
+	@FindBy(xpath = "//ul[@class='top-menu notmobile']//a[@href='/cell_phones']")
 	WebElement cellPhoneLink;
 
-	@FindBy(name="Apparel ")
+	@FindBy(xpath="//ul[@class='top-menu notmobile']//a[@href='/apparel']")
 	WebElement apparelLink;
 
-	@FindBy(linkText = "Shoes ")
+	@FindBy(xpath = "//ul[@class='top-menu notmobile']//a[@href='/shoes']")
 	WebElement shoesLink;
 
-	@FindBy(linkText = "Digital downloads ")
+	@FindBy(xpath = "//ul[@class='top-menu notmobile']//a[@href='/digital-downloads']")
 	WebElement digitalDownloadsLink;
+
+	@FindBy(xpath = "//div[@class='header-menu']")
+	WebElement headerMenu;
 
 	public void openRegisterationPage()
 	{
@@ -69,22 +72,22 @@ public class HomePage extends PageBase{
 
 	public void openElectronicsCategory()
 	{
-		action.moveToElement(electronicsLink).perform();
+		action.moveToElement(electronicsLink).moveToElement(cellPhoneLink).click().build().perform();
 	}
 
 	public void openCellPhonesPage()
 	{
-		action.moveToElement(cellPhoneLink).perform();
+		action.moveToElement(cellPhoneLink).build().perform();
 	}
 
 	public void openApprealCategory()
 	{
-		action.moveToElement(apparelLink).perform();
+		action.moveToElement(apparelLink).click().build().perform();
 	}
 
 	public void openShoesCategory()
 	{
-		action.moveToElement(shoesLink).perform();
+		action.moveToElement(shoesLink).click().build().perform();
 	}
 
 	public void openDigitalDownloads() {

@@ -36,7 +36,6 @@ public class SearchPage extends PageBase {
 	public void ProductSearch(String productName)
 	{
 		setTextElementText(searchTextBox, productName);
-		clickButton(searchBtn);
 	}
 
 	public void clickSearchBtn()

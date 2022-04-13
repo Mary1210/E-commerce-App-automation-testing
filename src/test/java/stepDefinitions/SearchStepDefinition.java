@@ -37,7 +37,7 @@ public class SearchStepDefinition extends TestRunner {
     @And("Open product details page")
     public void openProductDetailsPage()
     {
-            searchObject.OpenProductDetailsPage();
+        searchObject.OpenProductDetailsPage();
     }
 
     @Then("Product details page opens successfully")

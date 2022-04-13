@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src\\main\\resources\\features"},
+        features = {"src\\main\\resources\\features\\05_Categories.feature"},
         glue = "stepDefinitions",
         tags = "@Regression",
         plugin = { "pretty", "html:target/cucumber-reports" }

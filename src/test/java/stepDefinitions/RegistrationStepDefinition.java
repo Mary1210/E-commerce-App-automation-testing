@@ -36,7 +36,7 @@ public class RegistrationStepDefinition extends TestRunner{
     @When("User enter valid data")
     public void insertValidData()
     {
-        registerObject.userRegisteration("test", "test", "test12@mail.com", "12345678");
+        registerObject.userRegisteration("test", "test", "test1234@mail.com", "12345678");
     }
 
     @And("User click on register button")

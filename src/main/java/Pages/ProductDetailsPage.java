@@ -13,37 +13,20 @@ public class ProductDetailsPage extends PageBase{
 	
 	@FindBy(css="div[class='add-to-wishlist']")
 	WebElement addToWishListBtn;
-	
+
 	@FindBy (css="strong[class='current-item']")
 	public WebElement productNamebreadCrumb;
 	
-	@FindBy (css="input[value='Email a friend']")
-	WebElement emailFriendBtn;
-	
-	@FindBy (css= "span[class='price-value-4']" )
-	public WebElement ProductPriceLbl;
-	
-	@FindBy(linkText= "Add your review")
-	public WebElement addReviewLink;
-	
-	@FindBy(css="input.button-2.add-to-compare-list-button")
+	@FindBy(xpath="//div[@class='compare-products']")
 	WebElement addToCompareBtn ;
 	
-	@FindBy (css="input[value='Add to cart']")
+	@FindBy (xpath="//button[@class='button-1 add-to-cart-button']")
 	WebElement addToCartBtn;
 
 	@FindBy(linkText = "HTC One Mini Blue")
 	WebElement htcProduct;
 	
-	public void openSendEmail()
-	{
-		clickButton(emailFriendBtn);
-	}
-	
-	public void openAddReviewPage()
-	{
-		clickButton(addReviewLink);
-	}
+
 	public void AddProductToWishList()
 	{
 		clickButton(addToWishListBtn);

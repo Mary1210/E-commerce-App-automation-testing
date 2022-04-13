@@ -42,7 +42,7 @@ public class LoginStepDefinition extends TestRunner {
     @When("User enter valid username and password")
     public void insertValidData()
     {
-        LoginObject.UserLogin("test12@mail.com", "12345678");
+        LoginObject.UserLogin("test1234@mail.com", "12345678");
     }
 
     @When("Click on forget Password")
@@ -60,7 +60,7 @@ public class LoginStepDefinition extends TestRunner {
     @And("User write E-mail")
     public void enterEmailForForgetPassword()
     {
-        ForgetObject.Forgetpassword("test12@mail.com");
+        ForgetObject.Forgetpassword("test1234@mail.com");
     }
 
     @And("User click on logout button")

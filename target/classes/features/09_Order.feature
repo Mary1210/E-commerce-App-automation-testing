@@ -3,7 +3,7 @@ Feature: User should be able to create successful order
   Scenario: User create successful order
     Given Insert product name to order
     When User click on search button
-    And Open product details page
+    And Open product details page to order
     Then Add product to shopping Cart
     And Go to Shopping cart page
     Then Product added to Shopping Cart to do an order

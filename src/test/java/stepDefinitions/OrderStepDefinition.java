@@ -23,6 +23,8 @@ public class OrderStepDefinition extends TestRunner {
         searchObject = new SearchPage(driver);
         detailsObject = new ProductDetailsPage(driver);
         cartPage = new ShoppingCartPage(driver);
+        checkoutObject = new CheckoutPage(driver);
+        compareObject = new ComparePage(driver);
     }
 
     @Given("Insert product name to order")
