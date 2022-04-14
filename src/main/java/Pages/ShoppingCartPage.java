@@ -20,24 +20,24 @@ public class ShoppingCartPage extends PageBase {
 	
 	@FindBy(id="termsofservice")
 	WebElement agreeCheckBox;
-	
 
 	@FindBy(id="termsofservice")
-	WebElement agreeCheckbox; 
-	
-	@FindBy(css="input.button-1.checkout-as-guest-button")
-	WebElement guestCheckoutBtn ;
+	WebElement agreeCheckbox;
+
+	@FindBy(name="updatecart")
+	WebElement removeBtn;
+
+	@FindBy (css= "div[class='no-data']")
+	public WebElement EmptyCartbl;
 	
 	public void OpenCheckoutPage()
 	{
 		clickButton(agreeCheckBox);
 		clickButton(checkoutBtn);
 	}
-	
-	public void openCheckoutPageAsGuest() 
+
+	public void removeFromCart()
 	{
-		clickButton(agreeCheckbox);
-		clickButton(checkoutBtn);
-		clickButton(guestCheckoutBtn);
+		clickButton(removeBtn);
 	}
 }

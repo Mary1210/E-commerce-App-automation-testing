@@ -9,6 +9,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ShoppingCartStepDefinition extends TestRunner {
 
@@ -16,6 +18,7 @@ public class ShoppingCartStepDefinition extends TestRunner {
     SearchPage searchObject;
     ProductDetailsPage detailsObject;
     ShoppingCartPage cartPage;
+    WebDriverWait wait;
 
 
     @Before
@@ -23,6 +26,7 @@ public class ShoppingCartStepDefinition extends TestRunner {
         searchObject = new SearchPage(driver);
         detailsObject = new ProductDetailsPage(driver);
         cartPage = new ShoppingCartPage(driver);
+        wait = new WebDriverWait(driver,30);
     }
 
     @Given("Insert product name")
@@ -53,5 +57,7 @@ public class ShoppingCartStepDefinition extends TestRunner {
     public void productAddedToShoppingCart()
     {
         Assert.assertTrue(cartPage.totalLbl.getText().contains("100"));
+        cartPage.removeFromCart();
+        Assert.assertTrue(cartPage.EmptyCartbl.getText().contains("empty!"));
     }
 }

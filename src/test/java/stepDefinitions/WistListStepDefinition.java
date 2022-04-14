@@ -53,5 +53,7 @@ public class WistListStepDefinition extends TestRunner {
     public void productAddedToWishList()
     {
         Assert.assertTrue(wishlistobject.ProductCell.getText().contains(productName));
+        wishlistobject.removeProductFromCart();
+        Assert.assertTrue(wishlistobject.EmptyCartbl.getText().contains("empty!"));
     }
 }

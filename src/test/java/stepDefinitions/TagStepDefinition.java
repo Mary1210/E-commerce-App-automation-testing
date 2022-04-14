@@ -45,6 +45,6 @@ public class TagStepDefinition extends TestRunner {
 
     @Then("Another tagged product page open")
     public void taggedProductPageOpen_02() {
-        Assert.assertTrue(tagObject.titleBook.getText().contains("digital"));
+        Assert.assertTrue(tagObject.titleDigital.getText().contains("digital"));
     }
 }

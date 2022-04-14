@@ -1,5 +1,6 @@
 package Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -64,14 +65,21 @@ public class HomePage extends PageBase{
 		clickButton(loginLink);
 	}
 
-	public void changeCurrency()
+	public void changeCurrencyToEuro()
 	{
 		select = new Select(CurrenyDropdown);
 		select.selectByVisibleText("Euro");
 	}
 
+	public void changeCurrencyToDollar()
+	{
+		select = new Select(CurrenyDropdown);
+		select.selectByVisibleText("US Dollar");
+	}
+
 	public void openElectronicsCategory()
 	{
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul[@class='top-menu notmobile']//a[@href='/electronics']")));
 		action.moveToElement(electronicsLink).moveToElement(cellPhoneLink).click().build().perform();
 	}
 

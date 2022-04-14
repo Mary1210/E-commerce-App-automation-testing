@@ -5,6 +5,7 @@ import Pages.ProductDetailsPage;
 import Pages.SearchPage;
 import Runners.TestRunner;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -22,11 +23,17 @@ public class CurrencyStepDefinition extends TestRunner {
     @Given("Click on currency dropdown")
     public void changeCurrency()
     {
-        homeObject.changeCurrency();
+        homeObject.changeCurrencyToEuro();
     }
     @Then("Currency changes successfully")
     public void currencyChanged()
     {
         Assert.assertEquals(true, homeObject.customerCurrency.getText().contains("Euro"));
+    }
+
+    @And("Change currency again")
+    public void changeCurrencyAgain()
+    {
+        homeObject.changeCurrencyToDollar();
     }
 }

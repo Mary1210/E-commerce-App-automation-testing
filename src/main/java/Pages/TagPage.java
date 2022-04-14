@@ -21,7 +21,7 @@ public class TagPage extends PageBase{
     public WebElement titleBook;
 
     @FindBy(xpath = "//h1[contains(text(),  'digital')]")
-    WebElement titleDigital;
+    public WebElement titleDigital;
 
     public void clickOnBookTag(){
         bookTag.click();

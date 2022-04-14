@@ -39,7 +39,7 @@ public class OrderStepDefinition extends TestRunner {
 
     @Then("Product added to Shopping Cart to do an order")
     public void productAddedToShoppingCart() {
-        Assert.assertTrue(cartPage.totalLbl.getText().contains("$100.00"));
+        Assert.assertTrue(cartPage.totalLbl.getText().contains("1,500.00"));
     }
 
     @And("Open checkout page")

@@ -3,13 +3,14 @@ package Pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class WishListPage extends PageBase{
 
 	public WishListPage(WebDriver driver) {
 		super(driver);
-		
+		wait = new WebDriverWait(driver, 30);
 	}
 	
 	@FindBy (css="td.product")
@@ -18,10 +19,7 @@ public class WishListPage extends PageBase{
 	@FindBy(css="h1")
 	public WebElement WishlistHeader;
 	
-	@FindBy (name="updatecart")
-	WebElement updateWishlistBtn;
-	
-	 @FindBy (name="removefromcart")
+	 @FindBy (name="updatecart")
 	 WebElement removefromCartCheck;
 	
 	 @FindBy (css= "div[class='no-data']")
@@ -29,9 +27,9 @@ public class WishListPage extends PageBase{
 	 
 	 public void removeProductFromCart()
 	 {
+		// wait.until(ExpectedConditions.elementToBeSelected(removefromCartCheck));
 		 clickButton(removefromCartCheck);
-		 clickButton(updateWishlistBtn);
-		 //Assert.assertTrue(EmptyCartbl.getText().contains("empty!"));
+		 //clickButton(updateWishlistBtn);
 	 }
 	 
 

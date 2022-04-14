@@ -36,32 +36,29 @@ public class CheckoutPage extends PageBase{
 	@FindBy(id = "BillingNewAddress_ZipPostalCode")
 	private WebElement postCodeTxt;
 
-	@FindBy(xpath = "//*[@id=\'billing-buttons-container\']/input")
+	@FindBy(xpath = "//div[@id='billing-buttons-container']//button[@class='button-1 new-address-next-step-button']")
 	private WebElement continueBtn;
 
-	@FindBy(id = "shippingoption_1")
+	@FindBy(id = "shippingoption_0")
 	private WebElement shippingMethodRdo;
 
-	@FindBy(xpath = "//*[@id=\'shipping-method-buttons-container\']/input")
+	@FindBy(xpath = "//button[@class='button-1 shipping-method-next-step-button']")
 	private WebElement continueShippingBtn;
 
-	@FindBy(xpath = "//*[@id=\'payment-method-buttons-container\']/input")
+	@FindBy(xpath = "//button[@class='button-1 payment-method-next-step-button']")
 	private WebElement continuePaymentBtn;
 
-	@FindBy(xpath = "//*[@id=\'payment-info-buttons-container\']/input")
+	@FindBy(xpath = "//button[@class='button-1 payment-info-next-step-button']")
 	private WebElement continueInfoBtn;
 
 	@FindBy(css = "a.product-name")
 	public WebElement prodcutName;
 
-	@FindBy(css = "input.button-1.confirm-order-next-step-button")
+	@FindBy(xpath = "//button[@class='button-1 confirm-order-next-step-button']")
 	private WebElement confirmBtn;
 
 	@FindBy(css = "h1")
 	public WebElement ThankYoulbl;
-
-	@FindBy(css = "div.title")
-	private WebElement successMessage;
 
 	@FindBy(linkText = "Click here for order details.")
 	private WebElement orderDetailsLink;
@@ -82,31 +79,13 @@ public class CheckoutPage extends PageBase{
 		clickButton(continueInfoBtn);
 	}
 
-	public void confirmOrder() throws InterruptedException 
+	public void confirmOrder()
 	{
 		clickButton(confirmBtn);
-		Thread.sleep(2000);
 	}
 
 	public void viewOrderDetails() {
 		clickButton(orderDetailsLink);
 	}
-	public void CheckoutProduct(String firstName, String lastName, String countryName,
-			String email, String address, String postcode, 
-			String phone, String city, String productName) throws InterruptedException {
-		setTextElementText(fnTxt, firstName);
-		setTextElementText(lnTxt, lastName);
-		setTextElementText(emailTxt, email);
-		select = new Select(countryList);
-		select.selectByVisibleText(countryName);
-		setTextElementText(cityTxt, city);
-		setTextElementText(addressTxt, address);
-		setTextElementText(postCodeTxt, postcode);
-		setTextElementText(phoneTxt, phone);
-		clickButton(continueBtn);
-		clickButton(shippingMethodRdo);
-		clickButton(continueShippingBtn);
-		clickButton(continuePaymentBtn);
-		clickButton(continueInfoBtn);
-	}
+
 }
