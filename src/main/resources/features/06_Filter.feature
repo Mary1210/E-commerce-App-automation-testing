@@ -1,6 +1,6 @@
 @Regression
-Feature: User should be able to select category and sub categories
-  Scenario: User select category and sub categories
+Feature: User should be able to filter with color
+  Scenario: User filter with color
     Given Click on Appreal category
     When User click on Shoes category
     Then Shoes page category page opens successfully

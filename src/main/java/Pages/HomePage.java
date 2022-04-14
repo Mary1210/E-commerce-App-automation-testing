@@ -1,6 +1,5 @@
 package Pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -79,8 +78,10 @@ public class HomePage extends PageBase{
 
 	public void openElectronicsCategory()
 	{
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul[@class='top-menu notmobile']//a[@href='/electronics']")));
-		action.moveToElement(electronicsLink).moveToElement(cellPhoneLink).click().build().perform();
+		//wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul[@class='top-menu notmobile']//a[@href='/electronics']")));
+		//clickButton(electronicsLink);
+		action.moveToElement(electronicsLink).click().build().perform();
+
 	}
 
 	public void openCellPhonesPage()
