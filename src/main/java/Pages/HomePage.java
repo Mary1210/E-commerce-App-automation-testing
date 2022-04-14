@@ -43,7 +43,7 @@ public class HomePage extends PageBase{
 	@FindBy(xpath="//ul[@class='top-menu notmobile']//a[@href='/apparel']")
 	WebElement apparelLink;
 
-	@FindBy(xpath = "//ul[@class='top-menu notmobile']//a[@href='/shoes']")
+	@FindBy(xpath = "//div[@class='picture']//a[@href='/shoes']")
 	WebElement shoesLink;
 
 	@FindBy(xpath = "//ul[@class='top-menu notmobile']//a[@href='/digital-downloads']")
@@ -78,10 +78,7 @@ public class HomePage extends PageBase{
 
 	public void openElectronicsCategory()
 	{
-		//wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//ul[@class='top-menu notmobile']//a[@href='/electronics']")));
-		//clickButton(electronicsLink);
 		action.moveToElement(electronicsLink).click().build().perform();
-
 	}
 
 	public void openCellPhonesPage()
@@ -91,12 +88,12 @@ public class HomePage extends PageBase{
 
 	public void openApprealCategory()
 	{
-		action.moveToElement(apparelLink).click().build().perform();
+		clickButton(apparelLink);
 	}
 
 	public void openShoesCategory()
 	{
-		action.moveToElement(shoesLink).click().build().perform();
+		clickButton(shoesLink);
 	}
 
 	public void openDigitalDownloads() {

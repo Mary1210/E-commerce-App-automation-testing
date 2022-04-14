@@ -18,15 +18,12 @@ public class ShoppingCartStepDefinition extends TestRunner {
     SearchPage searchObject;
     ProductDetailsPage detailsObject;
     ShoppingCartPage cartPage;
-    WebDriverWait wait;
-
 
     @Before
     public void ShpoppingCartStepDefinitionBeforeClass() {
         searchObject = new SearchPage(driver);
         detailsObject = new ProductDetailsPage(driver);
         cartPage = new ShoppingCartPage(driver);
-        wait = new WebDriverWait(driver,30);
     }
 
     @Given("Insert product name")

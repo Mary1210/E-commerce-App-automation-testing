@@ -23,7 +23,7 @@ public class CategoryPage extends PageBase{
     @FindBy(tagName = "li")
     List <WebElement> allColors;
 
-    @FindBy(xpath="//label[@for='attribute-option-15']")
+    @FindBy(xpath="//input[@id='attribute-option-15']")
     public WebElement redcolor;
 
     public void selectColor(String selectColor)
