@@ -26,11 +26,11 @@ public class CategoriesStepDefinition extends TestRunner {
         homeObject.openElectronicsCategory();
     }
 
-   @When("User click on sub category")
+ /*  @When("User click on sub category")
     public void clickOnSubCategory()
     {
         homeObject.openCellPhonesPage();
-    }
+    }*/
 
     @Then("Sub category page opens successfully")
     public void subCategoryOpens()

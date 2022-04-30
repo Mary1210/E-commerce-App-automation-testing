@@ -78,7 +78,7 @@ public class HomePage extends PageBase{
 
 	public void openElectronicsCategory()
 	{
-		action.moveToElement(electronicsLink).click().build().perform();
+		action.moveToElement(electronicsLink).moveToElement(cellPhoneLink).click().build().perform();
 	}
 
 	public void openCellPhonesPage()

@@ -16,7 +16,11 @@ import java.util.concurrent.TimeUnit;
         features = {"src\\main\\resources\\features"},
         glue = "stepDefinitions",
         tags = "@Regression",
-        plugin = { "pretty", "html:target/cucumber-reports" }
+        plugin = { "pretty",
+                "html:target/cucumber-reports",
+                "json:target/cucumber.json",
+                "junit:target/cukes.xml",
+                "rerun:target/rerun.txt" }
 )
 
 public class TestRunner {
